@@ -1,0 +1,337 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+index
+{% endblock title %} 
+{% block body%} 
+
+{% load static %}
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+   
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/f1.jpg' %}" class="d-block rounded w-100 h-80" alt="...">
+      <!-- <a type="button" class="btnnn btn-outline-success text-danger" data-target="#signupModel" data-toggle="modal" ><b>SIGNUP</b></a> 
+      <a  type="button" class="btnn btn-outline-success text-danger" data-target="#loginModel" data-toggle="modal"><b>LOGIN</b></a>  -->
+      <div class="carousel-caption d-none d-md-block text-danger ">
+        
+     
+
+      
+
+
+        
+      </div>
+    </div>
+
+
+</div>
+</div>
+<div class=" alert alert-danger border-dark mt-1 ml-3 mr-3" role="alert" style="background-color: black;" >
+  <marquee class="" style=" font-family: cursive; color: red;background-color: greenyellow; " ><h1><---SUSTAINABLE FARMING METHODS AND PRACTICES---></h1></marquee></div>
+
+<hr>
+
+<section id="about">
+  <div class="container mt-1 ">
+<div class="row about-extra  ">
+      <div class="col-lg-6 wow fadeInUp ">
+        <img src="{% static 'images/per.jpeg' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 wow fadeInUp  pt-5 pt-lg-0">
+        
+        <h1 class=" " style="color:blue; font-family: cursive;"><u>PERMACULTURE</u></h1>
+        <p style="color: aqua">
+          <b style="color:rgb(245, 11, 11);">Permaculture</b> is a design system that applies principles that are found in nature to the development of human settlements, allowing humanity to live in harmony with the natural world. Permaculture principles and ethics can be applied to almost any area of living, including local economies, energy systems, water supplies, housing systems, and food production
+        Foundational to producing food through permaculture is intention, design, and <b style="color: gold;">“working smarter not harder”</b> to banish waste and to create efficient systems
+      </p>
+      <p style="color: aqua;">Permaculture design techniques include herb spirals, hugelkultur garden beds, keyhole and mandala gardens, sheet mulching, growing grain without tillage, each plant serving multiple purposes, and creating swales on contour to hold water high on the landscape.</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row about-extra ">
+      <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+        <img src="{% static 'images/bio.jpg' %}" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+        <h1 class="" style="color: green; font-family: cursive;"><u>BIODYNAMIC FARMING</u></h1>
+        <p style="color: aqua;">Biodynamics incorporates ecological and holistic growing practices that are based upon the philosophy of “anthroposophy.” Farmers are encouraged to manage their farm as one living organism where cultivated species intertwine and support each other’s health
+          <b style="color: red;">Biodynamics</b> emphasizes the importance of reducing the use of off-site inputs (such as importing soil fertility) by generating the necessary health and soil fertility for food production onsite. This is achieved through the implementation of practices such as composting, application of animal manure from farmed animals, cover cropping or rotating complementary crops.
+          <b style="color: red;">Biodynamic practices</b> can be applied to farms that grow variety of produce, gardens, vineyards, and other forms of agriculture.
+        </p>
+      </div>
+
+    </div>
+    
+    <hr>
+    <div class="row about-extra">
+      <div class="col-lg-6 wow fadeInUp">
+        <img src="{% static 'images/hydro1.jpg' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+        <h1 class="" style="color: red;font-family: cursive;"><u>HYDROPONICS & AQUAPONICS</u></h1>
+        <p style="color: aqua;">
+          These innovative farming techniques involve the growing of plants without soil, nourishing the plants through specialized nutrients that are added to water.
+
+          In <b style="color: blue;">Hydroponic systems</b>, crops are grown with the roots directly in a mineral solution or with the roots in an inert medium like gravel or perlite.
+          
+          <b style="color: blue;">Aquaponics</b> combines the raising of aquatic animals (such as fish) with the growing of hydroponic crops. In aquaponic systems, the water containing the waste material from the aquaculture fish is used to nourish the hydroponic plants. After the water is used by the plants, the water is then recirculated back into the system to be reused by the fish.
+          
+          Both <b style="color: blue;">Hydroponic</b> and <b style="color: blueviolet;"> Aquaponic</b> systems are available in a variety of scales, from small home-scale systems to commercial-scale systems.
+       </p>
+      </div>
+    </div>
+    <hr>
+    <div class="row about-extra">
+      <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+        
+        <img src="{% static 'images/urban.jpg' %}" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+        <h1 class="" style="color: yellow;font-family: cursive;"><u>URBAN AGRICULTURE</u> </h1>
+        <p style="color: aqua;">
+          The need to localize our food system requires that we grow food much closer to home, including in cities. Since most of the global population is predicted to live in cities in the future, there is a tremendous opportunity for urban agriculture to make a significant positive impact moving forward when it comes to how we produce our food around the world.
+          Today, many innovative and sustainable growing techniques are already being used in cities, including backyard farms and gardens, community gardens, rooftop farms, growing crops in urban greenhouses, indoor hydroponic farms, and perhaps even growing food inside urban farm towers someday.
+        </p>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row about-extra">
+      <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+        <img src="{% static 'images/forest1.jpg' %}" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+        <h1 class="" style="color: orangered;font-family: cursive;"><u>AGROFORESTRY & FOOD FORESTS</u></h1>
+        <p style="color: aqua;">
+       <b style="color: goldenrod;">Agroforestry</b> involves the growth of trees and shrubs amongst crops or grazing land. Agroforestry systems can combine both agriculture and forestry practices for long-lasting, productive, and diverse land use when approached sustainably.In agroforestry systems, trees create a favorable microclimate that maintains favorable temperature and soil humidity, while protecting crops from wind or heavy rain. Trees have another important role. They stabilize soils, minimize nutrient runoff and improve soil structure. This is the reason why agroforestry has become one of the powerful tools of farmers in dry regions with soils susceptible to desertification.Besides promoting healthy growth of food crops and maintaining soil fertility, trees in this farming system provide wood and fruits as an additional source of income for farmers. In these systems, possibilities for product diversification are many. Farmers can go even as far as growing a whole edible forest. 
+       <b style="color: green;">Food forest</b> systems are very productive, due to both the diversity of plants that are growing there, and all of the plants within the system that are taking advantage of each existing niche within the system.
+        </p>
+      </div>
+
+    </div>
+
+
+    <hr>
+
+    <div class="row about-extra">
+      <div class="col-lg-6 wow fadeInUp">
+        <img src="{% static 'images/cropp.jpg' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+        <h1 class="" style="color:fuchsia;font-family: cursive;"> <u>POLYCULTURES & CROP ROTATION</u> </h1>
+        <p style="color: aqua;"><b style="color: chartreuse;">Polyculture</b> farming involves growing multiple crop species in one area. These species are often complementary to each other and aim at producing greater diversity of products from one plot while fully utilizing available resources. High biodiversity makes the system more resilient to weather fluctuations, promotes balanced diet and applies natural mechanisms to preserve soil fertility.
+          <b style="color: chartreuse;">Crop rotation</b> is based on growing a series of different types of crops in the same area in sequential seasons. The planned rotation may vary from a growing season to a few years or even longer periods. It is one of the most effective agricultural control strategies that is used in preventing the loss of soil fertility.</p>
+     
+      </div>
+    </div>
+    <hr>
+    <div class="row about-extra">
+      <div class="col-lg-6 wow fadeInUp ">
+        <img src="{% static 'images/growth-1800x1100.jpg' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+        <h1 class="" style="color: royalblue;font-family: cursive;"> <u>GROWTH OF HEIRLOOM & OLDER VARIETIES</u></h1>
+        <p style="color: aqua;">There is currently a great need to grow <b style="color: rgb(236, 196, 17);">heirloom</b> and older varieties of crops in order to preserve the biodiversity of seeds. If gardeners and farmers do not continue to grow heirloom and other older varieties of plants and save their seeds, many of the remaining varieties of our food plants could be lost to the world forever.Losing traditional varieties could be compared to losing an important source of genetic information and part of our ancestral heritage, as these plants have adapted precisely to make the most out of local conditions. Generations of our ancestors have spent decades of selecting only the best seeds that have provided the most nutritious and flavored food. Their quality is often supreme, and it is rather wasteful to let them disappear.
+       </p>
+      </div>
+    </div>
+  
+  <hr>
+
+  
+
+
+  <div class="row about-extra">
+    <div class="col-lg-6 wow fadeInUp">
+      <img src="{% static 'images/natural-1800x1100.jpeg' %}" class="img-fluid" alt="">
+    </div>
+    <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+      <h1 class="" style="color: rgb(36, 235, 18);font-family: cursive;"><u>ANIMAL RAISING</u> </h1>
+      <p style="color: aqua;"><b style="color: rgb(250, 154, 9);">Sustainable  Animal Farming</b>  is possible and is better for everyone. Not only that it is good for the environment and our nutritional needs, it is also good for the animals. Animals that are raised on the pasture or in their preferred environment live under less stress, closer to their natural way of living. They can have fulfilling social interactions with other animals and behave in a way that is natural to them (roll in the mud, pick plants they want to eat, rest side by side, play).</p>
+      <p style="color: aqua;"><b style="color: rgb(236, 177, 13);">ANIMAL RAISING IS DONE  BY</b> Allowing animals to graze and live in pasture is much healthier for animals than confined animal feeding operations are. You will even notice that these animals are cleaner, smell better and have that curious spark in their eyes. Their health and happiness reflect in the quality of products we get from them. Tastier meat, yellower eggs, milk richer in the mineral and vitamin content.</p>
+   
+    
+    </div>
+</div>
+</div>
+</div>
+<div class="container mt-3">
+
+
+</p>
+
+<ul>
+</div>
+
+
+
+</div>
+</div>
+
+<br>
+<hr>
+<hr>
+<div class="card text-primary bg-primary mb-8" >
+  <div class="card-header"><B style="background-color:black ; color: yellow;">ABOUT US</B>
+    
+  </div>
+  
+</div>
+  <div class="card-body text-white bg-dark mb-8">
+    <p5 class="card-title" style="color: white;"><b style="color: red;">Agriculture </b> describes the practice of growing crops or raising animals. Someone who works as a farmer is in the agriculture industry. The Latin root of agriculture is agri, or "field," plus cultura, "cultivation." Cultivating a piece of land, or planting and growing food plants on it, is largely what agriculture means</p5>
+  </div>
+ <hr>
+  <div class="card-body  bg-primary mb-8"  ><b style="background-color:black ; color: yellow;">FARMER'S FRIEND--->FARMEASY</b>
+  </div>
+      <div class="card-body bg-dark mb-8" style="color: white;">Email ID : farmerfriend@gmail.com
+    <p >Address:Plot No.72&73,4th Floor,Akshay Tech Park EPIP Area Hoodi Village,Whitefield Bangalore Bangalore KA 560066 IN
+      <br>
+      <br>
+      <a class="btn btn-outline-success" href="/about" role="button"><b style="color: aqua;">To Know More</b></a>
+  </p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <b>CONTACT @      </b><a href="https://www.facebook.com/groups/191369735304861/" class="fa fa-facebook"></a>
+
+    <a href="https://www.instagram.com/farmersfriendllc/" class="fa fa-instagram"></a>
+    <a href="https://www.youtube.com/results?search_query=farmer%27s+friend" class="fa fa-youtube"></a>
+
+<br>
+      <div class="container text-center">
+        <br>
+        <br>
+    <a class="text-center text-white text-muted" href="https://www.airobotica.in/"> powered By : <b class="text-center text-warning" >AIROBOTICA</b></a>
+
+ 
+  </div>
+    
+    <!-- /* Style all font awesome icons */ -->
+    <style>
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+/* Instagram */
+.fa-instagram{
+  background: #55ACEE;
+  color: red;
+}
+
+
+/* Twitter */
+.fa-twitter {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+    img {
+  border: 2px solid orangered;
+}
+</style>
+<style>
+/* Style the button and place it in the middle of the container/image */
+ .btnn {
+  position: absolute;
+  top: 80%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: blue;
+  color: red;
+  font-size: 16px;
+  padding: 16px 32px;
+  border: none;
+ 
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.btnn:hover {
+  background-color: whitesmoke;
+}
+</style>
+<style>
+  /* Style the button and place it in the middle of the container/image */
+   .btnnn {
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    color: red;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    
+  }
+  
+  .btnnn:hover {
+    background-color: blue;
+  }
+  </style>
+  <style>
+       img {
+ 
+  border-radius: 10px;
+}
+body{
+    background-image:  url(" /static/images/back.jpg ") ; 
+    
+    background-size: cover;
+  }
+
+  #preloader{
+  background: url(" /static/images/h1.gif ") no-repeat  center, linear-gradient(deeppink,#009688)    ;
+  
+  background-size: 8%;
+  height: 100vh;
+  width: 100%;
+position: fixed;
+z-index: 100;
+}
+  </style>
+  
+
+ {% endblock body %}
+  
+
+  
+
+
+
+
+

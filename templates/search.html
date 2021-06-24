@@ -1,0 +1,132 @@
+{% extends 'basic.html' %}
+   
+{% block title %}
+Search Results
+{% endblock title %}
+{% block body%}
+{% load static %}
+
+<div class="container my-3">
+    <h3>Search Results....</h3>
+    {% if allPosts|length < 1 %}
+    Your Search  <b>{{query}}</b>  did not match any infomation
+    <br>
+    
+     <ul>
+    <p1>SUGGESTIONS:</p1>
+    
+        
+    <ul>
+ <li>
+        Make Sure that all the words are spelled correctly.
+    </li>
+        </ul>
+
+
+</div>
+    {% endif %}
+
+
+    {% for post in allPosts %}
+
+   <div class="container mt-2">
+   
+    <div class="alert alert-primary border-dark text-primary" role="alert">
+        OUR SOLUTIONS.... TO  :  <b>{{post.name}}</b>
+      </div>
+<div class="card border-success">
+        <b><div class="card-header border-danger text-success">
+          {{post.name}}
+        </div></b>
+        <div class="card-body ">
+         <img src="{{post.files.url}}" alt="..." class="center">
+          <br>
+          <blockquote class="blockquote mb-0">
+            <B class="text-danger">PROBLEM  :</B>
+            <p>{{post.desc}} ?</p>
+            <footer class="blockquote-footer text-warning">Question  by:  <b>{{post.name}}</b><cite title="Source Title">   ,on...{{post.timeStamp}}</cite></footer>
+          </blockquote>
+          <br>
+          <div class="fb-like" data-href="https://manjunathgowda.herokuapp.com/blog" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+        </div>
+      
+    
+
+    <br>
+<div class="container">
+<div class="fb-comments" data-href="https://manjunathgowda.herokuapp.com/blog" data-numposts="5" data-width=""></div>
+</div>
+</div>
+</div>
+      {% endfor %}
+
+
+
+      <style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+      </style>
+
+<style>
+     img {
+  border: 3px solid orangered;
+}
+#preloader{
+  background: url(" /static/images/h1.gif ") no-repeat  center, linear-gradient(deeppink,#009688)    ;
+  
+  background-size: 8%;
+  height: 100vh;
+  width: 100%;
+position: fixed;
+z-index: 100;
+}
+</style>
+
+
+
+{% endblock body%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

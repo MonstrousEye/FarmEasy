@@ -1,0 +1,348 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+
+        <link rel="icon" href="{% static 'images/logoo.png' %}" type="image/png" >
+
+  </head>
+  <body>
+    <div id="preloader" >
+     
+    </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
+    <img class="rounded-circle" src="{% static 'images/logoo.png' %}" alt="Logo" style="width:60px;">
+  <a class=" btn navbar-brand btn  btn-outline-danger ml-2" style=" font-family: cursive; color: yellow;" href="/"><b>FARMEASY</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item ">
+        <a  class="nav-link btn  btn-outline-warning ml-1 " style=" font-family: cursive; color: blue;" href="/"><b>HOME</b></a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link btn  btn-outline-warning  ml-1" style=" font-family: cursive; color: blue;" href="/blog"><b>ADMIN</b></a>
+      </li>
+      <li class="nav-item">
+        <a class=" nav-link btn  btn-outline-warning ml-1" style=" font-family: cursive; color: blue;" href="/about"><b>ABOUT</b></a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link btn  btn-outline-warning ml-1" style=" font-family: cursive; color: blue;" role="/contact" href="/contact"><b>CONTACT</b></a>
+      </li>
+      
+      
+    </ul>
+    
+    <div class=" ml-auto form-inline ">
+    <form  method="get" action="/search" class="my-2 my-lg-0 mx-0 ">
+      <input class="form-control  mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style=" font-family: cursive; color: yellow;"><b>SEARCH</b></button>
+    </form>
+  </div>
+
+    {% if user.is_authenticated %}
+
+    <ul class="navbar-nav ml-2">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle btn-outline-warning   mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <b style=" font-family: cursive; color: red;"> WELCOME <b style=" font-family: cursive; color: yellow;" >{{request.user}}</b></b> 
+          </a>
+        <div class="dropdown-menu btn-outline-danger" aria-labelledby="navbarDropdown">
+          <a class=" dropdown-item btn-outline-danger" style=" font-family: cursive; color: red;"    href="/logout"><b>LOGOUT</b></a>
+
+         
+
+          
+          {% else %}
+
+
+          <button type="button" class="btn btn-outline-danger mx-2" style=" font-family: cursive;" data-target="#loginModel" data-toggle="modal"> <b>LOGIN</b></button>
+     
+         <button type="button" class="btn btn-outline-success my-2 my-sm-0"  style=" font-family: cursive;" data-target="#signupModel" data-toggle="modal"> <b>SIGN-UP</b> </button>
+           
+          
+        
+         {% endif %} 
+        
+  </li>
+</ul>
+</div>
+
+  
+
+
+   
+
+  
+ 
+
+  </div>
+</nav>
+
+
+
+
+{% for message in messages %}
+
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <strong></strong>{{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+
+    {% block body%}
+
+
+    {% endblock body %}
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<!-- Signup Modal -->
+<div class="modal fade " id="signupModel" tabindex="-1" style=" font-family: cursive;" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="signupModalLabel"><b>SIGN-UP</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <form action="/signup" method="post">{% csrf_token %}
+
+
+      <div class="form-group text-warning">
+      <label for="username"><b>UserName</b></label>
+      <input type="text" class="form-control " name="username" id="username" placeholder="choose unique name " required>
+      </div>
+
+     <div class="form-group text-warning">
+      <label for="fname"><b>First Name </b></label>
+      <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter Your First Name" required>
+      </div>
+
+
+      <div class="form-group text-warning">
+      <label for="lname"><b>Last Name </b></label>
+      <input type="text" class="form-control" name="lname" id="lname" placeholder="enter you last name" required>
+      </div>
+
+
+      
+      <div class="form-group text-warning">
+      <label for="email"><b>Email Address</b> </label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="enter your email" required>
+      </div>
+
+
+      
+      <div class="form-group text-warning ">
+      <label for="pass1"><b>Password </b></label>
+      <input type="password" class="form-control" name="pass1" id="pass1" placeholder="enter you password" required>
+      
+      
+  
+      <input type="checkbox" onclick="myFunction()">Show Password
+    </div>
+    
+
+
+      <div class="form-group text-warning">
+      <label for="pass2"><b>Confirm Password </b></label>
+      <input type="password" class="form-control" name="pass2" id="pass2" placeholder="confirm password" required>
+      </div>
+
+
+
+
+
+
+        <button type="submit" class="btn btn-outline-success"><b>SIGN-UP</b> </button>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} login model  {% endcomment %}
+
+<div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="loginModelLabel" style=" font-family: cursive;" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-success" id="loginModelLabel">LOGIN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+       <form action="/login" method="post">{% csrf_token %}
+  <div class="form-group text-danger">
+    <label for="loginusername"><b>UserName</b></label>
+    <input type="text" class="form-control " name="loginusername" id="loginusername" placeholder="Enter UserName" required>
+  </div>
+ 
+    <div class="form-group text-danger">
+    <label for="loginpassword"><b>Password</b></label>
+    <input type="password" class="form-control" name="loginpassword" id="loginpassword"  placeholder="Enter Your Password" required>
+  </div>
+  
+<button type="submit" class="btn btn-outline-danger" style=" font-family: cursive;"><b>LOGIN</b></button>
+</form>
+      </div>
+      <div class="modal-footer">
+        
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+
+/* Full-width input fields */
+  input[type=text],input[type=email],input[type=number],input[type=password]  {
+    width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus , input[type=password]:focus {
+  background-color:orangered;
+  outline: blue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  
+  padding: 12px 24px;
+ 
+  border-radius: 20px;
+
+  opacity: 12;
+}
+
+#preloader{
+  background: url(" /static/images/h1.gif ") no-repeat  center, linear-gradient(deeppink,#009688)    ;
+  
+  background-size: 8%;
+  height: 100vh;
+  width: 100%;
+position: fixed;
+z-index: 100;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
+    <script>
+      function myFunction() {
+     var x = document.getElementById("pass1");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   }
+   </script>
+
+<script>
+
+  var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+   
+  </script>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

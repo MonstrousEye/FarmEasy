@@ -1,0 +1,106 @@
+{% extends 'basic.html' %}
+   
+{% block title %}
+Admin
+{% endblock title %}
+
+{% block body%}
+{% load static %}
+  
+
+
+
+<div class=" alert alert-danger border-dark " role="alert" >
+  <marquee class=" text-warning"><h1 style=" font-family: fantasy; color: red;">WE ARE HERE TO HELP YOU ,IT'S OUR RESPONSIBILITY<h1></marquee></div>
+
+{% for post in allPosts %}
+
+   <div class="container mt-2   "  >
+     <br>
+   
+    <div class="alert alert-primary border-dark " role="alert" style="color: yellow; background-color: crimson; box-shadow: 8px -8px 5px aqua;">
+        OUR SOLUTIONS.... TO  :  <b>{{post.name}}</b>
+      </div>
+<div class="card border-success" >
+        <b><div class="card-header border-danger " style="color: green;">
+          {{post.name}}
+        </div></b>
+        <div class="card-body ">
+         <img src="{{post.files.url}}" alt="..." class="center" style="box-shadow:  10px -10px 10px  deeppink;">
+          <br>
+          <blockquote class="blockquote mb-0">
+            <B class="" style="color: red;">PROBLEM  :</B>
+            <p style="color: black;">{{post.desc}} ?</p>
+            <footer class="blockquote-footer " style="color: yellow;">Question  by:  <b>{{post.name}}</b><cite title="Source Title">   ,on...{{post.timeStamp}}</cite></footer>
+          </blockquote>
+          <br>
+          <div class="fb-like" data-href="https://manjunathgowda.herokuapp.com/blog" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+          
+        </div>
+
+        
+      
+    
+
+    <br>
+    
+<div class="container">
+  
+<div class="fb-comments" data-href="https://manjunathgowda.herokuapp.com/blog" data-numposts="5" data-width=""></div>
+</div>
+</div>
+</div>
+
+
+      {% endfor %}
+
+
+
+      <style>
+
+body{
+    background-image:  url(" /static/images/back.jpg ") ; 
+    
+    background-size: cover;
+  }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+      </style>
+
+<style>
+     img {
+  border: 3px solid orangered;
+  border-radius: 10px;
+
+}
+
+#preloader{
+  background: url(" /static/images/h1.gif ") no-repeat  center, linear-gradient(deeppink,#009688)    ;
+  
+  background-size: 8%;
+  height: 100vh;
+  width: 100%;
+position: fixed;
+z-index: 100;
+}  
+        
+
+
+</style>
+
+
+{% endblock body%}
+
+
+
+
+
+
+
+
+
+
